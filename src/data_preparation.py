@@ -1,4 +1,26 @@
 def prepare_data(df):
+    """
+    Preprocesa un DataFrame para su uso en modelos de machine learning, 
+    incluyendo imputación de valores nulos, codificación de variables categóricas 
+    y división en conjuntos de entrenamiento y prueba.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame de entrada que contiene la columna `TARGET` como variable objetivo
+        y la columna `SK_ID_CURR` como identificador (que será eliminada).
+
+    Returns
+    -------
+    X_train : pandas.DataFrame
+        Subconjunto de entrenamiento con las variables predictoras codificadas.
+    X_test : pandas.DataFrame
+        Subconjunto de prueba con las variables predictoras codificadas.
+    y_train : pandas.Series
+        Variable objetivo correspondiente al conjunto de entrenamiento.
+    y_test : pandas.Series
+        Variable objetivo correspondiente al conjunto de prueba.
+    """    
     from sklearn.model_selection import train_test_split
     import pandas as pd
 
